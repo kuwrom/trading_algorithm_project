@@ -26,7 +26,7 @@ class Position:
             elif self.direction == 'SELL' and current_price >= self.stop_loss:
                 self.close_position(current_price)
             elif self.take_profit is not None:  # Check take profit the same way
-                # ...
+                self.take_profit(current_price)
 
             if self.hedge_needed:
                 if self.should_open_hedge(current_price):
